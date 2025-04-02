@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Efficacy Indicator</title>
+    <link rel="stylesheet" href="st1.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            padding: 8px 15px;
+            background: #ffc107;
+            color: #1e1e2f;
+            border-radius: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+        }
+
+        .about-button {
+            background: #6a0dad;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(106, 13, 173, 0.6);
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .left-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            max-height: 350px; /* Adjust image size */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .right-section {
+            flex: 1;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .title {
+            font-size: 28px;
+            color: #ffc107;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .get-started-button {
+            background: #6a0dad;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .get-started-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 13, 173, 0.6);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #29293d;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .close-button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .close-button:hover {
+            background: darkred;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">SEI</div>
+            <button class="about-button" onclick="openModal()">About</button>
+        </div>
+        <div class="content">
+            <div class="left-section">
+                <div class="image-placeholder">
+                    <img src="photo1.jpg" alt="studying">
+                </div>
+            </div>
+            <div class="right-section">
+                <h1 class="title">Self Efficacy Indicator</h1>
+                <p class="description">
+                    Recognizing individual capacity to deal with situations and reach specific goals is crucial for self-understanding. 
+                    Self-efficacy helps identify and enhance one's abilities to tackle challenges effectively. 
+                </p>
+                <p class="description">
+                    Belief in oneself not only promotes finding solutions but also boosts confidence, reduces shyness, and sets higher objectives. 
+                    The SEI is an instrument that recognizes and evaluates the self-efficacy of an individual.
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>Want To Track Your Learning Performance?</h2>
+            <p>A Quick Way to Calculate Your Learning Beliefs</p>
+            <a href="demo2.html">
+                <button class="get-started-button">Get Started</button>
+            </a>
+        </div>
+        <div class="made-by">Made by:</div>
+            <div class="names">
+                Dr. Savita Mohurle<br>
+                Mr. Vishwas Harishchandra Mahapure(MCA2403039)<br>
+                Mr. Prassna Teredal(BCA22288)
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">X</button>
+            <h2>About the Self Efficacy Indicator</h2>
+            <p>
+                SEI (Self Efficacy Indicator)
+                Self-efficacy is a belief an individual has in his or her capabilities to succeed in life.  Not only academic score but the factors such as experience, social persuasion, faith in self, role model, self-realization, etc. are equally responsible for influencing either positive or negative self-efficacy or in some individuals either high or low. 
+                So Let’s check our Self-Efficacy
+            </p>
+            <p>
+                Calculate Self-Efficacy Indicator (SEI) for a Learner in 3 steps:<br>
+                1.	Input- Type the academic score for Key Stage 1 to Key Stage 2<br>
+                2.	Select – Choose a suitable value for six self-efficacy factor - Previous experience (PE), Influence of role model (IM), Physical and emotional stages (PES), Social persuasion (SP), Imaginal experience (IE), Experience of control (EC)<br>
+                3.	Click – Click on CALCUATE SEI<br>
+                4.	Get your SEI<br>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("aboutModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("aboutModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById("aboutModal")) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>

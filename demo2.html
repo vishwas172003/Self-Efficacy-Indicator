@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Efficiency Indicator</title>
+    <link rel="stylesheet" href="st1.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .page-container {
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .page {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .left-page {
+            border-right: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #ffc107;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            margin-top: 20px;
+        }
+
+        .ele {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: #fcfbf8;
+        }
+
+        .ele input {
+            margin-left: 10px;
+            padding: 10px;
+            width: 70%;
+            border-radius: 8px;
+            border: 1px solid #ffc107;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s ease-in-out, transform 0.3s;
+        }
+
+        .ele input:focus {
+            border-color: #ff5722;
+            transform: scale(1.05);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons button {
+            background: #6a0dad;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px #6a0dad;
+        }
+    </style>
+    <script>
+        function saveKeyStageValues() {
+            const ks1 = document.getElementById("ks1").value;
+            const ks2 = document.getElementById("ks2").value;
+            const ks3 = document.getElementById("ks3").value;
+            const ks4 = document.getElementById("ks4").value;
+            const ks5 = document.getElementById("ks5").value;
+            const ks6 = document.getElementById("ks6").value;
+
+            // Save the values in localStorage
+            localStorage.setItem("ks1", ks1);
+            localStorage.setItem("ks2", ks2);
+            localStorage.setItem("ks3", ks3);
+            localStorage.setItem("ks4", ks4);
+            localStorage.setItem("ks5", ks5);
+            localStorage.setItem("ks6", ks6);
+        }
+    </script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="page left-page">
+            <h1>Self Efficiency Indicator (SEI)</h1>
+            <div class="form">
+                <div class="ele">
+                    <span>Roll No.:</span>
+                    <input type="text" id="roll" placeholder="Enter Roll No.">
+                </div>
+                <div class="ele">
+                    <span>Registration Number:</span>
+                    <input type="text" id="regis" placeholder="Enter Registration Number">
+                </div>
+                <div class="ele">
+                    <span>Name of Learner:</span>
+                    <input type="text" id="name" placeholder="Enter Name">
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="demo.html"><button>Back</button></a>
+            </div>
+        </div>
+
+        <div class="page right-page">
+            <h3>Details of Academic Score</h3>
+            <div class="form">
+                <div class="ele">
+                    <span>Key Stage 1:</span>
+                    <input type="text" id="ks1" placeholder="Enter Score">
+                </div>
+                <div class="ele">
+                    <span>Key Stage 2:</span>
+                    <input type="text" id="ks2" placeholder="Enter Score">
+                </div>
+                <div class="ele">
+                    <span>Key Stage 3:</span>
+                    <input type="text" id="ks3" placeholder="Enter Score">
+                </div>
+                <div class="ele">
+                    <span>Key Stage 4:</span>
+                    <input type="text" id="ks4" placeholder="Enter Score">
+                </div>
+                <div class="ele">
+                    <span>Key Stage 5:</span>
+                    <input type="text" id="ks5" placeholder="Enter Score">
+                </div>
+                <div class="ele">
+                    <span>Key Stage 6:</span>
+                    <input type="text" id="ks6" placeholder="Enter Score">
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="demo3.html"><button onclick="saveKeyStageValues()">Next</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

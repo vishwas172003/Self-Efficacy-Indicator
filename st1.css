@@ -1,0 +1,209 @@
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container, .page-container {
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+    font-size: 28px;
+    color: #FFC107;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+h3 {
+    font-size: 24px;
+    color: #FFC107;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.page-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.page {
+    width: 48%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.left-page {
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.ele {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.ele input, .ele select {
+    padding: 10px;
+    width: 60%;
+    border-radius: 8px;
+    border: 1px solid #FFC107;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ele input:focus, .ele select:focus {
+    border-color: #ff5722;
+    transform: scale(1.05);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a0dad;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(106, 13, 173, 0.6);
+}
+
+a button {
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    background-color: #6a0dad;
+    color: white;
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.SEI {
+    margin-top: 20px;
+}
+
+.SEI .el {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #FFC107;
+}
+
+.header, .footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: #ffc107;
+    color: #1e1e2f;
+    border-radius: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.image-placeholder img, .image-placeholder-small img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid white;
+}
+
+@media screen and (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    .page {
+        width: 100%;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

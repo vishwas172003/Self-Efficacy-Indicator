@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Efficiency Indicator</title>
+    <link rel="stylesheet" href="st1.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .page-container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .page {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left-page {
+            border-right: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1, h2 {
+            color: #ffc107;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        table th {
+            background: #6a0dad;
+        }
+
+        table td {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            background: #6a0dad;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(106, 13, 173, 0.6);
+        }
+
+        .score-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="page left-page">
+            <div class="container">
+                <h1>Self Efficiency Indicator (SEI)</h1>
+                <h2>SE Attributes SEI Calculator</h2>
+                <p>Select Suitable Attribute Values:</p>
+                <div class="form">
+                    <div class="ele">
+                        <label for="pe">Previous Experience (PE):</label>
+                        <select id="pe" name="pe">
+                            <option value="">Select</option>
+                            <option value="1">Terrible</option>
+                            <option value="2">Bad</option>
+                            <option value="3">Neutral</option>
+                            <option value="4">Good</option>
+                            <option value="5">Excellent</option>
+                        </select>
+                    </div>
+                    <div class="ele">
+                        <label for="im">Influence of Role Model (IM):</label>
+                        <select id="im" name="im">
+                            <option value="">Select</option>
+                            <option value="1">No Influence</option>
+                            <option value="2">Little</option>
+                            <option value="3">Somewhat</option>
+                            <option value="4">Moderate</option>
+                            <option value="5">Very Influential</option>
+                        </select>
+                    </div>
+                    <div class="ele">
+                        <label for="pes">Physical and Emotional Stages (PES):</label>
+                        <select id="pes" name="pes">
+                            <option value="">Select</option>
+                            <option value="1">Not at all</option>
+                            <option value="2">Slightly</option>
+                            <option value="3">Moderately</option>
+                            <option value="4">Very Much</option>
+                            <option value="5">Extremely</option>
+                        </select>
+                    </div>
+                    <div class="ele">
+                        <label for="sp">Social Persuasion (SP):</label>
+                        <select id="sp" name="sp">
+                            <option value="">Select</option>
+                            <option value="1">Not at all</option>
+                            <option value="2">Slightly</option>
+                            <option value="3">Somewhat</option>
+                            <option value="4">Moderately</option>
+                            <option value="5">Very Much</option>
+                        </select>
+                    </div>
+                    <div class="ele">
+                        <label for="ie">Imaginal Experience (IE):</label>
+                        <select id="ie" name="ie">
+                            <option value="">Select</option>
+                            <option value="1">Never</option>
+                            <option value="2">Occasionally</option>
+                            <option value="3">Frequently</option>
+                            <option value="4">Usually</option>
+                            <option value="5">Every Time</option>
+                        </select>
+                    </div>
+                    <div class="ele">
+                        <label for="ec">Experience of Control (EC):</label>
+                        <select id="ec" name="ec">
+                            <option value="">Select</option>
+                            <option value="1">No Control at All</option>
+                            <option value="2">Little Control</option>
+                            <option value="3">Somewhat in Control</option>
+                            <option value="4">Moderately Controlled</option>
+                            <option value="5">Completely in Control</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button onclick="calculateSEI()">Calculate SEI</button>
+                </div>
+            </div>
+        </div>
+        <div class="page right-page">
+            <h3>Statistical Description</h3>
+            <table>
+                <tr><th colspan="6">Key Stages</th></tr>
+                <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+                <tr>
+                    <td id="tks1">N/A</td>
+                    <td id="tks2">N/A</td>
+                    <td id="tks3">N/A</td>
+                    <td id="tks4">N/A</td>
+                    <td id="tks5">N/A</td>
+                    <td id="tks6">N/A</td>
+                </tr>
+            </table>
+            <h3>Attributes</h3>
+            <table>
+                <tr><th>PE</th><th>IM</th><th>PES</th><th>SP</th><th>IE</th><th>EC</th></tr>
+                <tr>
+                    <td id="tpe">N/A</td>
+                    <td id="tim">N/A</td>
+                    <td id="tpes">N/A</td>
+                    <td id="tsp">N/A</td>
+                    <td id="tie">N/A</td>
+                    <td id="tec">N/A</td>
+                </tr>
+            </table>
+            <div class="score-container">
+                <p class="score" id="ksAvg">Key Stage SEI Score: N/A</p>
+                <p class="score" id="attrAvg">TAG SEI: N/A</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculateSEI() {
+            const ksValues = [
+                localStorage.getItem("ks1"),
+                localStorage.getItem("ks2"),
+                localStorage.getItem("ks3"),
+                localStorage.getItem("ks4"),
+                localStorage.getItem("ks5"),
+                localStorage.getItem("ks6"),
+            ];
+            ksValues.forEach((val, index) => {
+                document.getElementById(`tks${index + 1}`).innerText = val || "N/A";
+            });
+            const ksValidValues = ksValues.filter((v) => !isNaN(v) && v !== null).map(Number);
+            const ksAvg = ksValidValues.length ? (ksValidValues.reduce((a, b) => a + b, 0) / ksValidValues.length).toFixed(2) : "N/A";
+            document.getElementById("ksAvg").innerText = `Key Stage SEI Score: ${ksAvg}`;
+    
+            const attrFields = ["pe", "im", "pes", "sp", "ie", "ec"];
+            const attrValues = attrFields.map((id) => Number(document.getElementById(id).value) || 0);
+            attrFields.forEach((id, index) => {
+                document.getElementById(`t${id}`).innerText = document.getElementById(id).value || "N/A";
+            });
+    
+            // Calculate Attributes SEI Score
+            const validAttrValues = attrValues.filter((v) => v > 0);
+            const attrAvg = validAttrValues.length ? (validAttrValues.reduce((a, b) => a + b, 0) / validAttrValues.length).toFixed(2) : "N/A";
+    
+            // Determine Confidence Level
+            let confidenceLevel = "N/A";
+            if (attrAvg !== "N/A") {
+                const avgNum = parseFloat(attrAvg);
+                if (avgNum >= 4.1 && avgNum <= 5) {
+                    confidenceLevel = "Extremely Confident";
+                } else if (avgNum >= 3.1 && avgNum <= 4) {
+                    confidenceLevel = "Confident";
+                } else if (avgNum >= 2.1 && avgNum <= 3) {
+                    confidenceLevel = "Quite Confident";
+                } else if (avgNum >= 1.1 && avgNum <= 2) {
+                    confidenceLevel = "Somewhat Confident";
+                } else if (avgNum >= 0.1 && avgNum <= 1) {
+                    confidenceLevel = "Slightly Confident";
+                }
+            }
+    
+            document.getElementById("attrAvg").innerText = `TAG SEI:(${confidenceLevel})`;
+        }
+    </script>
+    
+</body>
+</html>
